@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X, Leaf, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -39,8 +39,12 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-3">
-          <Button variant="ghost" size="sm">Connexion</Button>
-          <Button size="sm">S'inscrire</Button>
+          <Link to="/panier" className="relative p-2 text-muted-foreground hover:text-primary transition-colors">
+            <ShoppingCart className="w-5 h-5" />
+            <span className="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full hero-gradient text-primary-foreground text-[10px] font-bold flex items-center justify-center">3</span>
+          </Link>
+          <Button variant="ghost" size="sm" asChild><Link to="/connexion">Connexion</Link></Button>
+          <Button size="sm" asChild><Link to="/inscription">S'inscrire</Link></Button>
         </div>
 
         <button className="md:hidden" onClick={() => setOpen(!open)}>
@@ -61,8 +65,8 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-3 pt-3">
-            <Button variant="ghost" size="sm">Connexion</Button>
-            <Button size="sm">S'inscrire</Button>
+            <Button variant="ghost" size="sm" asChild><Link to="/connexion">Connexion</Link></Button>
+            <Button size="sm" asChild><Link to="/inscription">S'inscrire</Link></Button>
           </div>
         </div>
       )}

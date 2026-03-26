@@ -7,6 +7,12 @@ import Index from "./pages/Index.tsx";
 import Catalogue from "./pages/Catalogue.tsx";
 import CommentCaMarche from "./pages/CommentCaMarche.tsx";
 import APropos from "./pages/APropos.tsx";
+import Connexion from "./pages/Connexion.tsx";
+import Inscription from "./pages/Inscription.tsx";
+import Panier from "./pages/Panier.tsx";
+import Commande from "./pages/Commande.tsx";
+import DashboardAgricultrice from "./pages/DashboardAgricultrice.tsx";
+import DashboardRestaurateur from "./pages/DashboardRestaurateur.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +28,12 @@ const App = () => (
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/comment-ca-marche" element={<CommentCaMarche />} />
           <Route path="/a-propos" element={<APropos />} />
+          <Route path="/connexion" element={<Connexion />} />
+          <Route path="/inscription" element={<Inscription />} />
+          <Route path="/panier" element={<Panier />} />
+          <Route path="/commande" element={<Commande />} />
+          <Route path="/dashboard/agricultrice" element={<DashboardAgricultrice />} />
+          <Route path="/dashboard/restaurateur" element={<DashboardRestaurateur />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
