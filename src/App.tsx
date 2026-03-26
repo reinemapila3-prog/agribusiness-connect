@@ -28,6 +28,12 @@ const App = () => (
           <Route path="/catalogue" element={<Catalogue />} />
           <Route path="/comment-ca-marche" element={<CommentCaMarche />} />
           <Route path="/a-propos" element={<APropos />} />
+          <Route path="/connexion" element={<Connexion />} />
+          <Route path="/inscription" element={<Inscription />} />
+          <Route path="/panier" element={<Panier />} />
+          <Route path="/commande" element={<Commande />} />
+          <Route path="/dashboard/agricultrice" element={<DashboardAgricultrice />} />
+          <Route path="/dashboard/restaurateur" element={<DashboardRestaurateur />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

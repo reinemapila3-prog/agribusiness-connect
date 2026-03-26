@@ -65,8 +65,8 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-3 pt-3">
-            <Button variant="ghost" size="sm">Connexion</Button>
-            <Button size="sm">S'inscrire</Button>
+            <Button variant="ghost" size="sm" asChild><Link to="/connexion">Connexion</Link></Button>
+            <Button size="sm" asChild><Link to="/inscription">S'inscrire</Link></Button>
           </div>
         </div>
       )}
