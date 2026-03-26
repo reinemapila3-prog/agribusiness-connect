@@ -7,6 +7,12 @@ import Index from "./pages/Index.tsx";
 import Catalogue from "./pages/Catalogue.tsx";
 import CommentCaMarche from "./pages/CommentCaMarche.tsx";
 import APropos from "./pages/APropos.tsx";
+import Connexion from "./pages/Connexion.tsx";
+import Inscription from "./pages/Inscription.tsx";
+import Panier from "./pages/Panier.tsx";
+import Commande from "./pages/Commande.tsx";
+import DashboardAgricultrice from "./pages/DashboardAgricultrice.tsx";
+import DashboardRestaurateur from "./pages/DashboardRestaurateur.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
