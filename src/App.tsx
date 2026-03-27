@@ -3,17 +3,19 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import Catalogue from "./pages/Catalogue.tsx";
-import CommentCaMarche from "./pages/CommentCaMarche.tsx";
-import APropos from "./pages/APropos.tsx";
-import Connexion from "./pages/Connexion.tsx";
-import Inscription from "./pages/Inscription.tsx";
-import Panier from "./pages/Panier.tsx";
-import Commande from "./pages/Commande.tsx";
-import DashboardAgricultrice from "./pages/DashboardAgricultrice.tsx";
-import DashboardRestaurateur from "./pages/DashboardRestaurateur.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import { AuthProvider } from "@/contexts/AuthContext";
+import Index from "./pages/Index";
+import Catalogue from "./pages/Catalogue";
+import CommentCaMarche from "./pages/CommentCaMarche";
+import APropos from "./pages/APropos";
+import Connexion from "./pages/Connexion";
+import Inscription from "./pages/Inscription";
+import Panier from "./pages/Panier";
+import Commande from "./pages/Commande";
+import DashboardAgriculteur from "./pages/DashboardAgriculteur";
+import DashboardRestaurateur from "./pages/DashboardRestaurateur";
+import DashboardGrandeSurface from "./pages/DashboardGrandeSurface";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -23,19 +25,22 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/catalogue" element={<Catalogue />} />
-          <Route path="/comment-ca-marche" element={<CommentCaMarche />} />
-          <Route path="/a-propos" element={<APropos />} />
-          <Route path="/connexion" element={<Connexion />} />
-          <Route path="/inscription" element={<Inscription />} />
-          <Route path="/panier" element={<Panier />} />
-          <Route path="/commande" element={<Commande />} />
-          <Route path="/dashboard/agricultrice" element={<DashboardAgricultrice />} />
-          <Route path="/dashboard/restaurateur" element={<DashboardRestaurateur />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/catalogue" element={<Catalogue />} />
+            <Route path="/comment-ca-marche" element={<CommentCaMarche />} />
+            <Route path="/a-propos" element={<APropos />} />
+            <Route path="/connexion" element={<Connexion />} />
+            <Route path="/inscription" element={<Inscription />} />
+            <Route path="/panier" element={<Panier />} />
+            <Route path="/commande" element={<Commande />} />
+            <Route path="/dashboard/agriculteur" element={<DashboardAgriculteur />} />
+            <Route path="/dashboard/restaurateur" element={<DashboardRestaurateur />} />
+            <Route path="/dashboard/grande-surface" element={<DashboardGrandeSurface />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
